@@ -21,7 +21,7 @@ line_bot_api = LineBotApi('Zxj5kIZrk0v37Wj3V93O9kW1CEmoYiJAKcCvDSzRL6ItNzBOp0UfS
 handler = WebhookHandler('bd1e309160e6d0827cb00da627b3943a') # YOUR_CHANNEL_SECRET
 
 # 接收line傳來的訊息轉載到我們設定的伺服器的程式碼
-@app.route("/callback", methods=['POST'])
+@app.route('/callback', methods=['POST'])
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
@@ -49,5 +49,5 @@ def handle_message(event):
         TextSendMessage(text=s))
 
 # 檔案直接被執行才會執行程式
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
